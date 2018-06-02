@@ -1,10 +1,12 @@
----
+
 
 ##Title: "Streaming Data With Kafka"
 
 ##Author: "Harby Ariza"
 
----
+
+##
+##
 
 Installing Kafka on Centos 7 OS:
 
