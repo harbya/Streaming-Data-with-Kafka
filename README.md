@@ -35,6 +35,11 @@ After you done installing kafka you need to visit to the confluent site and down
 
 https://www.confluent.io/download/
 
+Also if you want to have a quick look about what you can do and achieve with KSQL I suggest you to check the slides below:
+
+https://www.confluent.io/kafka-summit-london18/unlocking-the-world-of-stream-processing-with-ksql-the-streaming-sql-engine-for-apache-kafka
+
+
 Also if you need Datasets for testing I suggest you to visit the kaggle.com as there is a huge variety of datasets that can be used for testing purposes.
 
 https://www.kaggle.com/
