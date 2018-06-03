@@ -19,6 +19,15 @@ Just one more thing , at the time I downloaded kafka I used the command below be
 ##
 ```
  wget https://www-us.apache.org/dist/kafka/0.11.0.2/kafka_2.11-0.11.0.2.tgz 
+ 
+ ```
+  
+Unzip the file and copy onto /opt directory. Then rename the directory as shown below :  
+##
+```
+tar -xvf kafka_2.11-0.11.0.2.tgz 
+mv kafka_2.11-0.11.0.2 /opt
+mv kafka_2.11-0.11.0.2 kafka
 ```
 
 
