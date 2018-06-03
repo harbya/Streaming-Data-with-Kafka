@@ -22,7 +22,7 @@ Just one more thing , at the time I downloaded kafka I used the command below be
  
  ```
   
-Unzip the file and copy onto /opt directory. Then rename the directory as shown below :  
+Unzip the file and copy onto the **/opt** directory. Then rename the directory as shown below :  
 ##
 ```
 tar -xvf kafka_2.11-0.11.0.2.tgz 
