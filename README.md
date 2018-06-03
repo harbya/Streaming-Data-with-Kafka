@@ -261,6 +261,72 @@ ksql> select * from customer_by_age;
 ```
 
 
+Let's describe the stream **bank_stream_from_python** :
+##
+```
+ksql> describe bank_stream_from_python;
+
+ Field     | Type                      
+---------------------------------------
+ ROWTIME   | BIGINT           (system) 
+ ROWKEY    | VARCHAR(STRING)  (system) 
+ S_NO      | INTEGER                   
+ AGE       | INTEGER                   
+ JOB       | VARCHAR(STRING)           
+ MARITAL   | VARCHAR(STRING)           
+ EDUCATION | VARCHAR(STRING)           
+ DEFAULT   | VARCHAR(STRING)           
+ BALANCE   | BIGINT                    
+ HOUSING   | VARCHAR(STRING)           
+ LOAN      | VARCHAR(STRING)           
+ CONTACT   | VARCHAR(STRING)           
+ DAY       | VARCHAR(STRING)           
+ MONTH     | VARCHAR(STRING)           
+ DURATION  | INTEGER                   
+ CAMPAIGN  | INTEGER                   
+ PDAYS     | INTEGER                   
+ PREVIOUS  | INTEGER                   
+ POUTCOME  | VARCHAR(STRING)           
+ Y         | VARCHAR(STRING)           
+---------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+ksql> 
+```
+
+
+And do the same for the new table **customer_by_age**
+##
+```
+ksql> describe extended customer_by_age;
+
+Type                 : TABLE
+Key field            : BANK_STREAM_FROM_PYTHON.AGE
+Timestamp field      : Not set - using <ROWTIME>
+Key format           : STRING
+Value format         : DELIMITED
+Kafka output topic   : CUSTOMER_BY_AGE (partitions: 4, replication: 1)
+
+ Field      | Type                      
+----------------------------------------
+ ROWTIME    | BIGINT           (system) 
+ ROWKEY     | VARCHAR(STRING)  (system) 
+ AGE        | INTEGER          (key)    
+ KSQL_COL_1 | BIGINT                    
+----------------------------------------
+
+Queries that write into this TABLE
+-----------------------------------
+id:CTAS_CUSTOMER_BY_AGE - create table customer_by_age as select age,count(*) from bank_stream_from_python group by age;
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:         0   total-messages:       320     last-message: 2/06/18 4:48:09 PM
+ failed-messages:         0 failed-messages-per-sec:         0      last-failed:       n/a
+(Statistics of the local KSQL server interaction with the Kafka topic CUSTOMER_BY_AGE)
+```
+
 
 
 
