@@ -55,7 +55,7 @@ root@localhost:/opt/kafka/bin
 Followed by kafka broker:
 ##
 ```
-./kafka-server-start.sh /opt/kafka/config/server.properties
+./kafka-server-start.sh -daemon /opt/kafka/config/server.properties
 
 ```
 
