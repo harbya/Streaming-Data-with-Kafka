@@ -243,7 +243,7 @@ ksql> select * from bank_stream_from_python where s_no =5;
 1527920209457 | null | 5 | 59 | blue-collar | married | secondary | no | 0 | yes | no | unknown | 5 | may | 226 | 1 | -1 | 0 | unknown | no
 ```
 
-Let's create a table so we can group customers by age:
+Let's create a table so we can perform aggregations using customers by age:
 
 ##
 ```
@@ -343,6 +343,24 @@ messages-per-sec:         0   total-messages:       320     last-message: 2/06/1
 
 
 
+Also you can create a persistent stream based on a existing stream using the **where** condition:
 
+##
+```
+ksql> 
+ksql> 
+ksql> 
+ksql> create stream bank_stream_single as select * from bank_stream_from_python where marital = 'single'; 
+
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+ksql> select * from bank_stream_single limit 5;
+1528093123000 | null | 3 | 35 | management | single | tertiary | no | 1350 | yes | no | cellular | 16 | apr | 185 | 1 | 330 | 1 | failure | no
+1528093129006 | null | 6 | 35 | management | single | tertiary | no | 747 | no | no | cellular | 23 | feb | 141 | 2 | 176 | 3 | failure | no
+1528093143025 | null | 3 | 35 | management | single | tertiary | no | 1350 | yes | no | cellular | 16 | apr | 185 | 1 | 330 | 1 | failure | no
+1528093149031 | null | 6 | 35 | management | single | tertiary | no | 747 | no | no | cellular | 23 | feb | 141 | 2 | 176 | 3 | failure | no
+```
 
 
